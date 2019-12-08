@@ -1,0 +1,488 @@
+<html><head>
+<meta charset="UTF-8">
+<title>TJSON cheat sheet</title>
+<style type="text/css">
+html {
+	background-color: #f9f9f9;
+}
+body, #doc tt {
+	font: 15px 'Open Sans', sans-serif;
+	line-height: 1.35;
+}
+body {
+	max-width: 640px;
+	background: #ffffff;
+	margin: 0 auto;
+	padding: 8px;
+	box-shadow: 0 0 0 2px #eee;
+}
+
+#doc, #doc ul {
+	padding-left: 0;
+	margin: 0;
+}
+#doc div ul, #doc div ol {
+	padding-left: 20px;
+}
+#doc div ul li {
+	list-style: disc;
+	list-style-image: url('data:image/svg+xml;base256,<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="1em" viewBox="0 0 20px 1em"><circle cx="17px" cy="0.675em" r="2px"/></svg>'); 
+}
+
+#doc .header {
+	display: block;
+	outline: none;
+	text-decoration: none;
+	margin: 0;
+	font-weight: 700;
+	font-size: 100%;
+	color: #458;
+	border-left: 2px solid #f3f3f3;/* #f9f9f9*/
+	padding-left: 4px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	cursor: pointer;
+}
+#doc .header::before {
+	display: inline-block;
+	content: "+";
+	font: 12px monospace;
+	border: 1px solid #458;
+	line-height: 11px;
+	height: 11px;
+	width: 11px;
+	text-align: center;
+	border-radius: 50%;
+	margin-right: 4px;
+	vertical-align: middle;
+	position: relative;
+	top: -1px;
+}
+#doc .item.open > .header::before {
+	content: "-";
+}
+#doc .header:hover {
+	border-left-color: #f3f3f3;
+	background: #f3f3f3;
+}
+
+#doc a.broken {
+	color: red;
+}
+#doc p {
+	margin: 0;
+}
+#doc p + p, #doc p.pad {
+	margin-top: 0.5em;
+}
+
+#doc .content, #doc ul {
+	padding-left: 20px;
+	border-left: 2px solid #f3f3f3;
+}
+#doc tt {
+	font-weight: bold;
+}
+#doc pre {
+	font-family: Consolas, Dejavu Sans Mono, Segoe UI Mono, Ubuntu Mono, Lucida Console, monospace;
+	font-size: 9pt;
+	line-height: 1.25;
+	background: white;
+	padding: 4px 2px 4px 10px;
+	margin: 0;
+	tab-size: 4;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+#doc pre a {
+	text-decoration: none;
+}
+#doc pre a.uf {
+	background-color: #f7f0ff;
+}
+#doc pre a.kw {
+	background-color: #f0f7ff;
+}
+#doc pre a.sf, #doc pre a.sv {
+	background-color: #fff3f0;
+}
+#doc pre a:hover {
+	text-decoration: underline;
+}
+#doc abbr[title] {
+	text-decoration: underline;
+	text-decoration-color: #bbb;
+	text-decoration-style: double;
+}
+/* delay display until load */
+#doc[ready] .item:not(.open) > .content {
+	display: none;
+}
+</style>
+<style type="text/css" id="md_gml">
+/* GameMakerLanguage */
+pre.gmlmd .md { color: #808 } /* #define */
+pre.gmlmd .kw { color: #008; font-weight: bold } /* keyword */
+pre.gmlmd .co { color: #080 } /* comment */
+pre.gmlmd .nu { color: #00f } /* number */
+pre.gmlmd .nx { color: #00f } /* hex */
+pre.gmlmd .st { color: #00f } /* string */
+pre.gmlmd .ts { color: #00f } /* template string */
+pre.gmlmd .op { color: #000 } /* operator */
+pre.gmlmd .cb { color: #008; font-weight: bold } /* curly brace */
+pre.gmlmd .sv { color: #800 } /* std func */
+pre.gmlmd .sf { color: #800 } /* std var */
+pre.gmlmd .ri { color: #0078aa } /* assets */
+pre.gmlmd .uf { color: #808 } /* user func */
+pre.gmlmd .uv { color: #000 } /* user var */
+pre.gmlmd .lv { color: #648 } /* local var */
+pre.gmlmd .fd { color: #804 } /* field */
+</style>
+<noscript><style>
+#doc .header::before {
+	display: none;
+}
+#doc .header:hover {
+	border-left-color: #f3f3f3;
+	background: inherit;
+}
+#doc { display: inherit }
+#doc .item:not(.open) > .content {
+	display: inherit;
+}
+</style></noscript>
+</head><body>
+<p>This is a function "cheat sheet" for TJSON extension by YellowAfterlife.
+<br/>The extension can be obtained from <a href="https://marketplace.yoyogames.com/assets/4328/_">Marketplace</a> or <a href="https://yellowafterlife.itch.io/gamemaker-tjson">itch.io</a>.
+<br/>A most up-to-date version of the manual is always <a href="https://yal.cc/r/17/tjson/">available online</a>.</p><p>
+Click on sections to expand/collapse them.<br>
+Quick display controls: <a href="#" onclick="opt_none(); return false">Categories</a>
+&middot; <a href="#" onclick="opt_list(); return false">Functions</a>
+&middot; <a href="#" onclick="opt_all(); return false">Everything</a>
+</p><div id="doc">
+<!--<doc--><div class="item"><a class="header" id="advantages" href="#advantages" title="(permalink)">Advantages</a><div class="content"><p>
+	This section is dedicated to advantages of TJSON over the built-in functions.
+	<div class="item"><a class="header" id="adv-memory" href="#adv-memory" title="(permalink)">Automatic memory management</a><div class="content"><p>
+		Built-in functions create data structures to store the resulting structures, causing memory leaks if not freed explicitly.
+		</p><p>
+		TJSON uses array-based memory structures (which are freed automatically) and automatically pools data structures on a few occasions where they are preferable.
+	</p></div></div>
+	<div class="item"><a class="header" id="adv-type" href="#adv-type" title="(permalink)">Type information</a><div class="content"><p>
+		Since built-in functions return data structure' <em>indexes</em>, it becomes impossible to reliably tell apart the encountered values if the type may vary. That is,
+		<br/></p><pre class="gmlmd">
+<span class="kw">var</span> <span class="lv">q</span> <span class="op">=</span> <span class="sf">json_decode</span><span class="op">(</span><span class="st">'{ "a": [], "b": {}, "c": 1, "d": true }'</span><span class="op">)</span><span class="op">;</span>
+<span class="sf">show_debug_message</span><span class="op">(</span><span class="lv">q</span><span class="op">[</span><span class="op">?</span><span class="st">"a"</span><span class="op">]</span><span class="op">)</span><span class="op">;</span>
+<span class="sf">show_debug_message</span><span class="op">(</span><span class="lv">q</span><span class="op">[</span><span class="op">?</span><span class="st">"b"</span><span class="op">]</span><span class="op">)</span><span class="op">;</span>
+<span class="sf">show_debug_message</span><span class="op">(</span><span class="lv">q</span><span class="op">[</span><span class="op">?</span><span class="st">"c"</span><span class="op">]</span><span class="op">)</span><span class="op">;</span>
+<span class="sf">show_debug_message</span><span class="op">(</span><span class="lv">q</span><span class="op">[</span><span class="op">?</span><span class="st">"d"</span><span class="op">]</span><span class="op">)</span><span class="op">;</span>
+</pre><p>produces outputs like "0, 1, 1, 1", leaving little way of finding out <em>what</em> the value is.
+		</p><p>
+		TJSON, on other hand, uses easily distinguishable array-based structures, and offers functions (<a href="#tj_is_array">tj_is_array</a>, <a href="#tj_is_object">tj_is_object</a>, <a href="#tj_is_bool">tj_is_bool</a>, etc.) to reliably tell apart the values.
+	</p></div></div>
+	<div class="item"><a class="header" id="adv-bool" href="#adv-bool" title="(permalink)">Boolean value support</a><div class="content"><p>
+		GameMaker has very partial boolean value support (<a href="#bool-overview">more on this</a>), and the built-in functions cannot produce boolean values (<tt>true</tt>/<tt>false</tt>) in resulting JSON strings <em>at all</em> - if an API requires you to provide a JSON boolean value, the most you can do is use a "special string" and string_replace_all it in the encoded string prior to submission.
+		</p><p>
+		TJSON, on other hand, implements a separate boolean type, allowing boolean values to be told apart after decoding, and to produce proper output upon encoding.
+	</p></div></div>
+</p></div></div>
+<div class="item"><a class="header" id="general" href="#general" title="(permalink)">General functions</a><div class="content"><p>
+	<div class="item"><a class="header" id="tj_decode" href="#tj_decode" title="(permalink)">tj_decode(json_string)</a><div class="content"><p>
+		Decodes the given JSON string into TJSON value(s).
+		</p><ul>
+		<li>	JSON arrays are decoded into <a href="#array">TJSON arrays</a>.
+		</li><li>	JSON objects are decoded into <a href="#object">TJSON objects</a>.
+		</li><li>	JSON boolean values are decoded into <a href="#tj_true">tj_true</a> / <a href="#tj_false">tj_false</a> accordingly.
+		</li><li>	Strings and numbers are decoded into GML strings/numbers.
+		</li><li>	JSON <tt>null</tt> is decoded into GameMaker' <tt>undefined</tt> (alias <tt>tj_null</tt>).
+		</li></ul><p>
+		Nested structures will produce nested JSON accordingly.
+		</p><p>
+		If JSON is invalid, <a href="#tj_error">tj_error</a> is returned and <a href="#tj_error_text">tj_error_text</a> is updated.
+		</p><p>
+		Resulting structures are managed automatically, so you don't need to destroy anything (as with data structure based approaches).
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_encode" href="#tj_encode" title="(permalink)">tj_encode(value, ?indent)</a><div class="content"><p>
+		Encodes the given value into JSON and returns it as a string.
+		</p><ul>
+		<li>	<a href="#array">Arrays</a> are encoded into JSON arrays.
+		</li><li>	<a href="#object">TJSON objects</a> are encoded into JSON objects.
+		</li><li>	<a href="#bool">TJSON boolean values</a> are encoded into JSON boolean values.
+		</li><li>	Strings and numbers are encoded as-is.
+		</li><li>	GameMaker' <tt>undefined</tt> is encoded into JSON <tt>null</tt> (alias <tt>tj_null</tt>).
+		</li><li>	Any other values are encoded as JSON <tt>null</tt>.
+		</li></ul><p>
+		Nested structures will produce nested JSON accordingly.
+		</p><p>
+		<strong>indent</strong> is indentation string (such as 2 spaces or 4 spaces or tab character). If not provided, the output is left without optional spacing/linebreaks.
+		</p><p>
+		If cyclical structures are passed, result is undefined (please don't).
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_opt_value_keys" href="#tj_opt_value_keys" title="(permalink)">tj_opt_value_keys(?allow)</a><div class="content"><p>
+		This option is only available for native targets and alters the internal parser to allow JSON keys to be strings, numbers, booleans, and null (undefined) instead of just strings.
+		</p><p>
+		Note that this is not specification compliant so you should only use it for convenience with your own code.
+		</p><p>
+		If an argument is passed, changes the option to match that.
+		</p><p>
+		If no argument is passed, returns the current option state.
+	</p></div></div>
+</p></div></div>
+<div class="item"><a class="header" id="value" href="#value" title="(permalink)">JSON value functions</a><div class="content"><p>
+	The following functions aid working with TJSON values in general
+	<div class="item"><a class="header" id="tj_copy" href="#tj_copy" title="(permalink)">tj_copy(value)</a><div class="content"><p>
+		Recursively makes a deep copy of the given TJSON value.
+		</p><p>
+		Leaves non-array/object values unchanged.
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_compare" href="#tj_compare" title="(permalink)">tj_compare(value1, value2)</a><div class="content"><p>
+		Recursively compares two TJSON values, returns whether contents match.
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_typeof" href="#tj_typeof" title="(permalink)">tj_typeof(value)</a><div class="content"><p>
+		Returns the type of the given value as string.
+		</p><p>
+		Possible outputs are as following:
+		</p><ul>
+		<li>	<strong>"object"</strong>: A <a href="#object">TJSON object</a>.
+		</li><li>	<strong>"array"</strong>: A <a href="#array">TJSON array</a>.
+		</li><li>	<strong>"number"</strong>: A numberic value.
+		</li><li>	<strong>"boolean"</strong>: A <a href="#bool">TJSON boolean value</a>.
+		</li><li>	<strong>"string"</strong>: A string value.
+		</li><li>	<strong>"error"</strong>: A <a href="#error">TJSON error value</a>.
+		</li><li>	<strong>"undefined"</strong>: An <tt>undefined</tt> value.
+		</li></ul><p>
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_typeid" href="#tj_typeid" title="(permalink)">tj_typeid(value)</a><div class="content"><p>
+		Much like <a href="#tj_typeof">tj_typeof</a>, but returns a numeric constant (<tt>tj_type_</tt>) instead of a string.
+		</p><p>
+		Can be slightly more convenient than string comparisons/lookups.
+	</p></div></div>
+</p></div></div>
+<div class="item"><a class="header" id="object" href="#object" title="(permalink)">JSON object functions</a><div class="content"><p>
+	<div class="item"><a class="header" id="object-overview" href="#object-overview" title="(permalink)">Overview</a><div class="content"><p>
+		On JavaScript-based platforms, TJSON uses native JS objects for high performance.
+		</p><p>
+		GML's native platforms currently lack support for garbage-collected/automatically managed object structures, so TJSON uses a workaround involving a 2d array storing the actual values and a reference to a field name - field index lookup table shared between objects of the same structure.
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_object" href="#tj_object" title="(permalink)">tj_object(...key_value_pairs)</a><div class="content"><p>
+		Forms a new TJSON object from provided key-value pairs.
+		</p><p>
+		Note that JSON keys can only be strings.
+		</p><p>
+		For example, <tt>tj_object("a", 1, "b", 2)</tt> produces an equivalent of <tt>{ "a": 1, "b": 2 }</tt>.
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_is_object" href="#tj_is_object" title="(permalink)">tj_is_object(value)</a><div class="content"><p>
+		Returns whether the given value is a <a href="#object">TJSON object</a>.
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_get" href="#tj_get" title="(permalink)">tj_get(obj, field)</a><div class="content"><p>
+		Retrieves a value from the given JSON object, much like <tt>ds_map_find_value</tt>.
+		</p><p>
+		If the given field is not present in the object, <tt>undefined</tt> is returned.
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_set" href="#tj_set" title="(permalink)">tj_set(obj, field, value)</a><div class="content"><p>
+		Changes a field on the given JSON object.
+		</p><p>
+		Throws an error if <tt>obj</tt> is not a valid object.
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_delete" href="#tj_delete" title="(permalink)">tj_delete(obj, field)</a><div class="content"><p>
+		Removes a key-value pair from the given JSON object.
+		</p><p>
+		Note that this is not very fast on native platforms because values have to be moved around in the container-array to fill the formed "gap".
+		</p><p>
+		Throws an error if <tt>obj</tt> is not a valid object.
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_size" href="#tj_size" title="(permalink)">tj_size(obj)</a><div class="content"><p>
+		Returns the number of fields in the given JSON object.
+		</p><p>
+		Returns 0 if the value is not a JSON object at all.
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_keys" href="#tj_keys" title="(permalink)">tj_keys(obj)</a><div class="content"><p>
+		Returns an array containing all fields of the given JSON object as an array.
+		</p><p>
+		Returns an empty array if the value is not a JSON object.
+	</p></div></div>
+</p></div></div>
+<div class="item"><a class="header" id="array" href="#array" title="(permalink)">Array functions</a><div class="content"><p>
+	<div class="item"><a class="header" id="array-overview" href="#array-overview" title="(permalink)">Overview</a><div class="content"><p>
+		GML and JSON arrays are fairly interchangeable.
+		</p><p>
+		On JavaScript platforms, TJSON uses native JavaScript arrays (which are compatible with GML arrays).
+		</p><p>
+		On native platforms, TJSON uses GML arrays, so standard functions (<a href="http://docs2.yoyogames.com/source/_build/3_scripting/3_gml_overview/arrays/array_length_1d.html">array_length_1d</a>, etc.) can be used for them.
+		</p><p>
+		Empty arrays may have a single-item second row for compatibility with &lt;= 1.4.1763.
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_is_array" href="#tj_is_array" title="(permalink)">tj_is_array(value)</a><div class="content"><p>
+		Returns whether the given value is a TJSON array (rather than a TJSON object or anything else).
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_array" href="#tj_array" title="(permalink)">tj_array(...values)</a><div class="content"><p>
+		Assembles an array containing the given values.
+		</p><p>
+		So <tt>tj_array(1, 2, 3)</tt> produces an equivalent of <tt>[1, 2, 3]</tt>.
+		</p><p>
+		In GameMaker: Studio 2, array literal <tt>[...]</tt> can be used.
+	</p></div></div>
+</p></div></div>
+<div class="item"><a class="header" id="bool" href="#bool" title="(permalink)">Boolean functions</a><div class="content"><p>
+	<div class="item"><a class="header" id="bool-overview" href="#bool-overview" title="(permalink)">Overview</a><div class="content"><p>
+		Historically, GameMaker did not have a boolean type - all "logical" operations and functions would yield values 1 (true) and 0 (false) accordingly.
+		</p><p>
+		Starting with Studio, support for actual boolean values was introduced, but they <a href="http://bugs.yoyogames.com/view.php?id=26211">remain to be used inconsistently</a> (for compatibility reasons?).
+		</p><p>
+		To workaround the situation and make it possible to tell apart the boolean and numeric values, TJSON defines two special constants (<tt>tj_true</tt> and <tt>tj_false</tt>) along with a few functions.
+		</p><p>
+		On JavaScript platforms, <tt>tj_true</tt> and <tt>tj_false</tt> map to the according JavaScript constants.
+		</p><p>
+		On native platforms, references to special arrays are used instead. This means that you should be doing <tt>if (v == tj_true)</tt> (or <tt>if (v != tj_false)</tt>) when working with these, rather than just <tt>if (v)</tt> directly.
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_is_bool" href="#tj_is_bool" title="(permalink)">tj_is_bool(value)</a><div class="content"><p>
+		Returns whether the given value is a TJSON boolean value (<tt>tj_true</tt> or <tt>tj_false</tt>).
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_bool" href="#tj_bool" title="(permalink)">tj_bool(bool)</a><div class="content"><p>
+		Returns either a <a href="#tj_true">tj_true</a> or a <a href="#tj_false">tj_false</a> value depending on the provided GameMaker boolean/numeric value.
+		</p><p>
+		Is very much just <tt>if (argument0) return tj_true; else return tj_false;</tt>
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_true" href="#tj_true" title="(permalink)">tj_true</a><div class="content"><p>
+		A special value representing a JSON' true-value.
+		</p><p>
+		Note that this is not the same as GML' true-value and you will need to compare explicitly (<tt>value == tj_true</tt>).
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_false" href="#tj_false" title="(permalink)">tj_false</a><div class="content"><p>
+		A special value representing a JSON' true-value.
+		</p><p>
+		Note that this is not the same as GML' true-value and you will need to compare explicitly (<tt>value == tj_false</tt>).
+	</p></div></div>
+</p></div></div>
+<div class="item"><a class="header" id="error" href="#error" title="(permalink)">Error handling</a><div class="content"><p>
+	<div class="item"><a class="header" id="error-overview" href="#error-overview" title="(permalink)">Overview</a><div class="content"><p>
+		TJSON follows the <a href="http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf">JSON specification</a> fairly strictly, and will not fail if invalid input is given.
+		<br/>When invalid input data is encountered, <a href="#tj_decode">tj_decode</a> will store the (human-readable) error text in <a href="#tj_error_text">tj_error_text</a> and will return <a href="#tj_error">tj_error</a>.
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_error" href="#tj_error" title="(permalink)">tj_error</a><div class="content"><p>
+		Is returned from <a href="#tj_decode">tj_decode</a> when invalid input is encountered.
+		</p><p>
+		This value is reused between function calls and servers as a constant to compare against.
+	</p></div></div>
+	<div class="item"><a class="header" id="tj_error_text" href="#tj_error_text" title="(permalink)">tj_error_text</a><div class="content"><p>
+		Is updated by <a href="#tj_decode">tj_decode</a> when invalid input is encountered.
+		</p><p>
+		Is a global variable, so you should copy the contents
+	</p></div></div>
+</p></div></div><!--doc>-->
+</div>
+<script>(function() {
+var doc = document.getElementById("doc");
+var headers = doc.getElementsByClassName("header");
+//
+var path = "TJSON cheat sheet";
+var state = null;
+if (window.localStorage && JSON.parse) {
+	state = window.localStorage.getItem(path);
+	state = state ? JSON.parse(state) : { };
+	if (state == null) state = { };
+}
+var isLocal = (location.host.indexOf("localhost") == 0);
+//
+function h3bind(h3) {
+	var node = h3.parentNode;
+	var snip = node.children[1];
+	var id = h3.id || h3.textContent;
+	h3.snip = snip;
+	h3.doc_set = function(z) {
+		if (z) node.classList.add("open"); else node.classList.remove("open");
+		if (state) {
+			state[id] = z;
+			window.localStorage.setItem(path, JSON.stringify(state));
+		}
+	}
+	h3.doc_hide = function() {
+		this.doc_set(false);
+	}
+	h3.doc_show = function() {
+		this.doc_set(true);
+	}
+	h3.onclick = function(_) {
+		var seen = !node.classList.contains("open");
+		h3.doc_set(seen);
+		return false;
+	};
+}
+function getHashFunc(id) {
+	var node = document.getElementById(id);
+	if (node == null) return null;
+	return function(e) {
+		while (node && node != doc) {
+			if (node.classList.contains("item")) {
+				node.classList.add("open");
+			}
+			node = node.parentElement;
+		}
+	};
+}
+(function() {
+	for (var i = 0; i < headers.length; i++) h3bind(headers[i]);
+	// Clicks in document expand the related section:
+	var anchors = doc.getElementsByTagName("a");
+	for (var i = 0; i < anchors.length; i++) {
+		var anchor = anchors[i];
+		if (anchor.classList.contains("header")) continue;
+		var href = anchor.getAttribute("href");
+		if (href[0] == "#") {
+			var fn = getHashFunc(href.substr(1));
+			if (!fn) {
+				anchor.classList.add("broken");
+				anchor.title = "(section missing)";
+			} else anchor.addEventListener("click", fn);
+		}
+	}
+})();
+// Display helpers:
+window.opt_none = function() {
+	for (var li = 0; li < headers.length; li++) headers[li].doc_hide();
+};
+window.opt_list = function() {
+	for (var li = 0; li < headers.length; li++) {
+		var h3 = headers[li];
+		if (h3.parentNode.parentNode != doc) {
+			h3.doc_hide();
+		} else h3.doc_show();
+	}
+};
+window.opt_all = function() {
+	for (var li = 0; li < headers.length; li++) headers[li].doc_show();
+};
+// Default display setting:
+(function() {
+	for (var li = 0; li < headers.length; li++) {
+		var h3 = headers[li];
+		var val = state ? state[h3.id || h3.textContent] : null;
+		if (val == null) val = isLocal || h3.parentNode.parentNode == doc;
+		if (val) h3.doc_show(); else h3.doc_hide();
+	}
+})();
+//
+(function() {
+	var hash = document.location.hash;
+	if (hash) {
+		var _hash = hash.substr(1);
+		getHashFunc(_hash)();
+		setTimeout(function() {
+			document.location.hash = hash + " ";
+			setTimeout(function() {
+				document.location.hash = hash;
+			}, 0);
+		}, 1);
+	}
+})();
+//
+doc.setAttribute("ready", "");
+if (isLocal) {
+	var live_js = document.createElement("script");
+	live_js.src = "live.js";
+	live_js.type = "text/javascript";
+	document.head.appendChild(live_js);
+}
+})();
+</script>
+</body></html>

@@ -1,0 +1,12 @@
+/// @desc Initialize
+hspd = 0;
+vspd = 0;
+spd = 5;
+frames = 35;
+dir = 0;
+ricochet = 0;
+weaponid = 0;
+networkSent = 0;
+idn = global.bulletIDNum++;
+centerx = x;
+centery = y;

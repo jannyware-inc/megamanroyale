@@ -1,0 +1,1 @@
+scr_draw9slice(spr_9slice_mm2,camX+border,camY+border,camX+camW-border,camY+camH-border);

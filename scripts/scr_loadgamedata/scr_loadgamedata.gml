@@ -1,0 +1,104 @@
+if(file_exists("mmroyale.ini")){
+	ini_open("mmroyale.ini");
+	global.rightkey1 = ini_read_real("keybinds","rightkey1",ord("D"));
+	global.rightkey2 = ini_read_real("keybinds","rightkey2",vk_right);
+	global.leftkey1 = ini_read_real("keybinds","leftkey1",ord("A"));
+	global.leftkey2 = ini_read_real("keybinds","leftkey2",vk_left);
+	global.downkey1 = ini_read_real("keybinds","downkey1",ord("S"));
+	global.downkey2 = ini_read_real("keybinds","downkey2",vk_down);
+	global.upkey1 = ini_read_real("keybinds","upkey1",ord("W"));
+	global.upkey2 = ini_read_real("keybinds","upkey2",vk_up);
+	global.jumpkey1 = ini_read_real("keybinds","jumpkey1",ord("Z"));
+	global.jumpkey2 = ini_read_real("keybinds","jumpkey2",ord("K"));
+	global.actkey1 = ini_read_real("keybinds","actkey1",ord("X"));
+	global.actkey2 = ini_read_real("keybinds","actkey2",ord("J"));
+	global.inv1key1 = ini_read_real("keybinds","inv1key1",ord("1"));
+	global.inv1key2 = ini_read_real("keybinds","inv1key2",noone);
+	global.inv2key1 = ini_read_real("keybinds","inv2key1",ord("2"));
+	global.inv2key2 = ini_read_real("keybinds","inv2key2",noone);
+	global.inv3key1 = ini_read_real("keybinds","inv3key1",ord("3"));
+	global.inv3key2 = ini_read_real("keybinds","inv3key2",noone);
+	global.inv4key1 = ini_read_real("keybinds","inv4key1",ord("4"));
+	global.inv4key2 = ini_read_real("keybinds","inv4key2",noone);
+	global.inv5key1 = ini_read_real("keybinds","inv5key1",ord("5"));
+	global.inv5key2 = ini_read_real("keybinds","inv5key2",ord("R"));
+	global.invfkey1 = ini_read_real("keybinds","invfkey1",ord("E"));
+	global.invfkey2 = ini_read_real("keybinds","invfkey2",noone);
+	global.invbkey1 = ini_read_real("keybinds","invbkey1",ord("Q"));
+	global.invbkey2 = ini_read_real("keybinds","invbkey2",noone);
+	global.dabkey1 = ini_read_real("keybinds","dabkey1",ord("F"));
+	global.dabkey2 = ini_read_real("keybinds","dabkey2",noone);
+	global.slidekey1 = ini_read_real("keybinds","slidekey1",ord("L"));
+	global.slidekey2 = ini_read_real("keybinds","slidekey2",ord("C"));
+	
+	
+	global.rightcon = ini_read_real("keybinds","rightcon",gp_padr);
+	global.leftcon = ini_read_real("keybinds","leftcon",gp_padl);
+	global.downcon = ini_read_real("keybinds","downcon",gp_padd);
+	global.upcon = ini_read_real("keybinds","upcon",gp_padu);
+	global.jumpcon = ini_read_real("keybinds","jumpcon",gp_face1);
+	global.actcon = ini_read_real("keybinds","actcon",gp_face3);
+	global.inv1con = ini_read_real("keybinds","inv1con",noone);
+	global.inv2con = ini_read_real("keybinds","inv2con",noone);
+	global.inv3con = ini_read_real("keybinds","inv3con",noone);
+	global.inv4con = ini_read_real("keybinds","inv4con",noone);
+	global.inv5con = ini_read_real("keybinds","inv5con",noone);
+	global.invfcon = ini_read_real("keybinds","invfcon",gp_shoulderr);
+	global.invbcon = ini_read_real("keybinds","invbcon",gp_shoulderl);
+	global.dabcon = ini_read_real("keybinds","dabcon",noone);
+	global.slidecon = ini_read_real("keybinds","slidecon",noone);
+	
+	global.username = ini_read_string("online","username","");
+	
+	global.bassunlocked = ini_read_real("unlocks","bass",false);
+} else {
+	global.rightkey1 = ord("D");
+	global.rightkey2 = vk_right;
+	global.leftkey1 = ord("A");
+	global.leftkey2 = vk_left;
+	global.downkey1 = ord("S");
+	global.downkey2 = vk_down;
+	global.upkey1 = ord("W");
+	global.upkey2 = vk_up;
+	global.jumpkey1 = ord("Z");
+	global.jumpkey2 = ord("K");
+	global.actkey1 = ord("X");
+	global.actkey2 = ord("J");
+	global.inv1key1 = ord("1");
+	global.inv1key2 = noone;
+	global.inv2key1 = ord("2");
+	global.inv2key2 = noone;
+	global.inv3key1 = ord("3");
+	global.inv3key2 = noone;
+	global.inv4key1 = ord("4");
+	global.inv4key2 = noone;
+	global.inv5key1 = ord("5");
+	global.inv5key2 = ord("R");
+	global.invfkey1 = ord("E");
+	global.invfkey2 = noone;
+	global.invbkey1 = ord("Q");
+	global.invbkey2 = noone;
+	global.dabkey1 = ord("F");
+	global.dabkey2 = noone;
+	global.slidekey1 = ord("L");
+	global.slidekey2 = ord("C");
+	
+	global.rightcon = gp_padr;
+	global.leftcon = gp_padl;
+	global.downcon = gp_padd;
+	global.upcon = gp_padu;
+	global.jumpcon = gp_face1;
+	global.actcon = gp_face3;
+	global.inv1con = noone;
+	global.inv2con = noone;
+	global.inv3con = noone;
+	global.inv4con = noone;
+	global.inv5con = noone;
+	global.invfcon1 = gp_shoulderr;
+	global.invbcon = gp_shoulderl;
+	global.dabcon = noone;
+	global.slidecon = noone;
+	
+	global.username = "";
+	global.bassunlocked = false;
+}

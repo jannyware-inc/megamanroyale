@@ -1,0 +1,10 @@
+ammoMax = 28;
+ammoCur = 0;
+ammoUnit = 28/ammoCur;
+displayAmmo = 0;
+infiniteAmmo = 0;
+name = "nothing";
+sprite = spr_mask_empty;
+selectable = false;
+meterSprite = noone;
+weaponid = -1;

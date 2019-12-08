@@ -1,0 +1,1 @@
+instance_create_depth(centerx,centery,depth,obj_explosionSmall);

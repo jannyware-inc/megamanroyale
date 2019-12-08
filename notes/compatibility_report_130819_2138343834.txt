@@ -1,0 +1,126 @@
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_stringbuf_add_sub(this:buffer, s:TjSource, pos:int, len:int)/// @param this:buffer
+/// @param  s:TjSource
+/// @param  pos:int
+/// @param  len:int
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_stringbuf_add_key(this:buffer, key:TjValue)/// @param this:buffer
+/// @param  key:TjValue
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_stringbuf_to_string(this:buffer)->string/// @param this:buffer
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_decode_uxchar(pos:int)->TjValue/// @param pos:int
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_decode_string()->TjValue
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_decode_number(c:int)->TjValue/// @param c:int
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_decode_value()->TjValue
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_decode_main(json:string)->TjValue/// @param json:string
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_encode_string(buf:buffer, s:string)/// @param buf:buffer
+/// @param  s:string
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_encode_number(buf:buffer, v:real)/// @param buf:buffer
+/// @param  v:real
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_encode_value(buf:buffer, val:TjValue, indent:string, tab:int)/// @param buf:buffer
+/// @param  val:TjValue
+/// @param  indent:string
+/// @param  tab:int
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_encode_main(val:TjValue, indent:string)->string/// @param val:TjValue
+/// @param  indent:string
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_decode(json:string)->TjValue/// @param json:string
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_encode(value:TjValue, ?indent:string)->string/// @param value:TjValue
+/// @param  ?indent:string
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_object_empty_lookup_init()->Map<string; int>
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_opt_value_keys(?allow:bool)->bool/// @param ?allow:bool
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_opt_ident_keys(?allow:bool)->bool/// @param ?allow:bool
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_source__new(s:string)->TjSource/// @param s:string
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_source_sub(this:buffer, pos:int, len:int)->string/// @param this:buffer
+/// @param  pos:int
+/// @param  len:int
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_is_array(q:dynamic)->bool/// @param q:dynamic
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_is_object(q:dynamic)->bool/// @param q:dynamic
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_magic_value(v:TjValue)->TjValue/// @param v:TjValue
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_bool(v:bool)->TjValue/// @param v:bool
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_is_bool(v:TjValue)->bool/// @param v:TjValue
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_typeof(q:TjValue)->string/// @param q:TjValue
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_typeid(q:TjValue)->string/// @param q:TjValue
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_object(...key_value_pairs:TjValue)->TjValue/// @param ...key_value_pairs:TjValue
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_array(...values:TjValue)->array<TjValue>/// @param ...values:TjValue
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_get(q:TjValue, key:string)->TjValue/// @param q:TjValue
+/// @param  key:string
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_set(q:TjValue, key:string, val:TjValue)/// @param q:TjValue
+/// @param  key:string
+/// @param  val:TjValue
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_delete(q:TjValue, key:string)/// @param q:TjValue
+/// @param  key:string
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_size(q:TjValue)->int/// @param q:TjValue
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_keys(q:TjValue)->array<string>/// @param q:TjValue
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_compare(a:TjValue, b:TjValue)->bool/// @param a:TjValue
+/// @param  b:TjValue
+
+Converting GML script: tjson-native.gml
+Converted description /// @description  tj_copy(val:TjValue)->TjValue/// @param val:TjValue
+
+Converting GML script: ${project_dir}\scripts\scr_tjson_demo\scr_tjson_demo.gml
+Converted string - line 3: '[1, 2, 3]' -> "[1, 2, 3]"
+Converted string - line 11: '{ "a": 1, "b": 2 }' -> "{ \"a\": 1, \"b\": 2 }"

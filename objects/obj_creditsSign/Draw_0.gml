@@ -1,0 +1,10 @@
+draw_set_font(fnt_5x5);
+draw_set_halign(fa_left);
+draw_text_outlined(x,y,c_black,c_white,"Mega Man IP Rights:\n\nMega Man is Property of Capcom.\nAll Mega Man music and SFX is\nproperty of Capcom.\nAll Mega Man sprite art is\nproperty of Capcom.\n\nJannyWare and Mega Man Royale\nare NOT affiliated with Capcom.");
+draw_text_outlined(x+200,y,c_black,c_white,"Music:\n\nNestalgica:\nMM2 Intro, MM2 Boss Theme,\nWood Man BGM, Crash Man BGM\n\n130 Grit Sound Studio:\nQuick Man BGM,Wood Man BGM\nSpark Mandrill, Stone Man");
+draw_text_outlined(x+350,y,c_black,c_white,"\n\nMaxim Zhuavlev:\nMM3 Stage Select Remix\n\nArathrum:\nSnake Man BGM\n\n");
+draw_text_outlined(x+500,y,c_black,c_white,"\n\nDiggi Dis:\nMM3 Game Over\n\nRory Butler:\nMM2 Password Select\n\n");
+draw_text_outlined(x+650,y,c_black,c_white,"\n\nDaniel Araujo:\nTop Man BGM, MM3 Boss\nMM3 Stage Intro\n\nCreble Star:\nCut Man BGM, MM1 Boss\nMM1 Sg. Intro, Fire Man");
+draw_text_outlined(x+800,y,c_black,c_white,"Mega Man Royale:\n\nGame Programming:\nJannyWare\nContact at:\njannyware@gmail.com\nTwitter @ jannyware\n\nServer Programming Help:\nIgor Pissolati");
+draw_text_outlined(x+950,y,c_black,c_white,"Sprite Rips:\nSpriters-resource.com\nSprites-inc.co.uk\n\nSFX Rips:\nsounds-resource.com\n\nSpecial Thanks:\n/v/ bros!\nYou!");
+//draw_text_outlined(x+1110,y,c_black,c_yellow,"\n\n\n\nTHANK YOU FOR PLAYING MY GAME!");

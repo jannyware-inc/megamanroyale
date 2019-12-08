@@ -1,0 +1,2 @@
+gracePixels = 8;
+return (rectangle_in_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, camera_get_view_x(view_camera[0])-gracePixels, camera_get_view_y(view_camera[0])-gracePixels, camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) + gracePixels, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0])+gracePixels))

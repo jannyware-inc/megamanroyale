@@ -1,0 +1,1 @@
+return abs(global.player.x - (x+sprite_width/2));

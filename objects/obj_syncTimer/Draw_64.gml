@@ -1,0 +1,1 @@
+draw_text(2,50,"Delta time : " + string(time) + "\nframes: " + string(framespassed));

@@ -1,0 +1,1 @@
+return((zone == global.zone or zone == -1) or scr_inView());

@@ -1,0 +1,1 @@
+//scr_draw9slice(spr_9slice_mm2,17,camera_get_view_height(view_camera[0])-8-32-8,8+32+32+1,camera_get_view_height(view_camera[0])-16);

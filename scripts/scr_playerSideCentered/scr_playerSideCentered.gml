@@ -1,0 +1,1 @@
+return sign(global.player.x - (x));

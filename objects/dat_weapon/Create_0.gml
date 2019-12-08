@@ -1,0 +1,11 @@
+ammoMax = 28;
+ammoCur = 0;
+ammoUnit = 28/ammoCur;
+displayAmmo = 0;
+infiniteAmmo = 0;
+name = "";
+sprite = spr_inv_megabuster;
+selectable = false;
+transportItem = false;
+meterSprite = noone;
+weaponid = -1;

@@ -1,0 +1,11 @@
+ammoMax = 28;
+ammoCur = 28;
+ammoUnit = ammoMax/14;
+displayAmmo = 0;
+infiniteAmmo = 0;
+name = "hyperbomb";
+sprite = spr_inv_hyperbomb;
+selectable = true;
+transportItem = false;
+meterSprite = spr_ammo_hyperbomb;
+weaponid = 5;

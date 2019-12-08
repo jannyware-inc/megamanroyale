@@ -1,0 +1,11 @@
+ammoMax = 28;
+ammoCur = 28;
+ammoUnit = 28/ammoCur;
+displayAmmo = 0;
+infiniteAmmo = 0;
+name = "searchsnake";
+sprite = spr_inv_searchsnake;
+selectable = true;
+transportItem = false;
+meterSprite = spr_ammo_searchsnake;
+weaponid = 2;

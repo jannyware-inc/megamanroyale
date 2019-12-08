@@ -1,0 +1,2 @@
+infiniteAmmo = true;
+infiniteLives = true;

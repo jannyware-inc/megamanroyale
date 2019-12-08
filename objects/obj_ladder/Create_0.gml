@@ -1,0 +1,1 @@
+canDescend = true; //can descend when standing on a laddertop.

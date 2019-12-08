@@ -1,0 +1,32 @@
+{
+    "id": "3810181b-c676-48ef-ba64-72a2da473219",
+    "modelName": "GMFolder",
+    "mvc": "1.1",
+    "name": "3810181b-c676-48ef-ba64-72a2da473219",
+    "children": [
+        "fcc7a8d1-dd65-4857-8fc5-e95fa71feb5b",
+        "a398cd88-b60b-4f47-8a1c-3cb547f5df3b",
+        "37a8764b-f204-4a5d-b25a-7d5785f1df17",
+        "2dafaa93-3015-4721-9362-1f18c3f0f7e9",
+        "c0415629-afa1-4d71-8518-36a3443285e9",
+        "4c5fc313-a3fc-4e9a-93ad-e87f3db97ddf",
+        "789050b2-b721-49cf-97da-6dbb5b045a76",
+        "82999cc2-dba8-4831-8a25-0dc6811efd31",
+        "5a9a14b0-1bfc-40cf-a72b-a0b4350df2bd",
+        "5ac69dc2-3410-42d6-b94f-d8462fff710e",
+        "45242f6b-9b38-4442-a7a7-39012a351301",
+        "2c33d7f5-ca49-474e-aa37-f9305610987e",
+        "3bbae1dd-0923-4bc7-a5f0-382f79f9b048",
+        "33dbdb1e-09bd-4556-93e4-291b8efa8373",
+        "edad451b-d73e-4e0b-b64c-de83001d5f01",
+        "acf04567-a639-40c9-aba0-26bb00c9e590",
+        "011b9a06-7b76-4744-b83d-4c9d6f7c756a",
+        "420285eb-7772-44a5-80d7-2f9ee3d2e111",
+        "f3feeea7-9f23-41c3-8100-5f4d43b784fd",
+        "4f27b206-a7f0-4f67-8008-a34386deec40"
+    ],
+    "filterType": "GMObject",
+    "folderName": "snakeman",
+    "isDefaultView": false,
+    "localisedFolderName": ""
+}

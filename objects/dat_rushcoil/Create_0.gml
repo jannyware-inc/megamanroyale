@@ -1,0 +1,13 @@
+ammoMax = 28;
+ammoCur = 28;
+ammoUnit = ammoMax/6;
+displayAmmo = 0;
+infiniteAmmo = 0;
+name = "rushcoil";
+sprite = spr_inv_rush;
+selectable = true;
+transportItem = true;
+frames = noone;
+meterSprite = spr_ammo_rush;
+weaponid = 4;
+jetUnit = 2;

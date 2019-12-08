@@ -1,0 +1,30 @@
+{
+    "id": "53e61763-7cbb-4afa-8936-0c9f28be94a7",
+    "modelName": "GMFolder",
+    "mvc": "1.1",
+    "name": "53e61763-7cbb-4afa-8936-0c9f28be94a7",
+    "children": [
+        "78fe9197-c939-4c56-a35c-4147c5a07396",
+        "d9876f45-3be4-47bf-8691-89d8ac84176b",
+        "9c1d30f8-f60f-4bc6-a2ad-38e8772d44ed",
+        "463f1e1d-9906-42f7-a013-7735f9ed7ff1",
+        "26f0d156-3e41-413e-8224-05f15d2f3e54",
+        "1c6389a8-0a1a-4e2e-ada3-27e8addbb092",
+        "1e619ddc-1623-4800-9000-dd5d98cf2df1",
+        "e78c8079-79dd-4d3b-9192-7c5c4c7795ab",
+        "c1db71db-3fe9-4d47-8a05-8580808c7de1",
+        "7cd54057-01b1-4b55-8238-235681bacb73",
+        "5e690775-1497-41b6-9c27-8b16113de06b",
+        "a40aebcb-c166-4be0-953f-e0e253e00270",
+        "f3e61fa3-d39b-4d47-a9c8-55c917fa5da0",
+        "772282c6-6ec2-4728-a054-b9e0ace113a1",
+        "4db44a2d-0e2f-406a-8b9e-0dcf28eb0d84",
+        "0aee6900-3c76-474b-8fd3-e1ad95bbb6d0",
+        "c35a3a45-bc87-40d6-9746-6b7f4ba07498",
+        "63308e90-4b9b-4acf-a4ea-641b69b4d397"
+    ],
+    "filterType": "GMSprite",
+    "folderName": "crashman",
+    "isDefaultView": false,
+    "localisedFolderName": ""
+}

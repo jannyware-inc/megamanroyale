@@ -1,0 +1,11 @@
+ammoMax = 28;
+ammoCur = 28;
+ammoUnit = ammoMax/14;
+displayAmmo = 0;
+infiniteAmmo = 0;
+name = "rollingcutter";
+sprite = spr_inv_rollingcutter;
+selectable = true;
+transportItem = false;
+meterSprite = spr_ammo_hyperbomb;
+weaponid = 8;
